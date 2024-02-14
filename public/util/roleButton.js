@@ -7,6 +7,9 @@
 
 (function (window) {
     'use strict';
+    function captureKeyboardEvent(e, ...keys) {
+        return e instanceof KeyboardEvent && keys.includes(e.key);
+    }
 
     class RoleButtonManager {
         name = "Role Button Manager";
@@ -39,7 +42,7 @@
 
         addKeyDownListener(el, handler) {
             function handleKeyDown(e) {
-                if (e.which === 32 || e.which === 13) {
+                if (captureKeyboardEvent(e, "Enter", " ")) {
                     e.preventDefault();
                     handler(e);
                 }

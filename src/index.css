@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+.series-description.hide {
+  display: none;
+}
+
 .credits {
   margin: 0;
 }
