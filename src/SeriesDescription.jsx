@@ -32,7 +32,8 @@ export function SeriesDescription() {
                     onKeyDown={keyboardTrigger} 
                     tabIndex="0" 
                     aria-expanded="true" 
-                    aria-controls="series-description">
+                    aria-controls="series-description"
+                    aria-label="Toggle Series Description">
                     <i className="fas fa-info-circle"></i>
                 </span>
                 <div id="series-description" className="series-description">
