@@ -13,35 +13,6 @@
   padding-left: 1em;
 }
 
-.header-series {
-  margin-bottom: 1em;
-}
-
-.header-series h1 {
-  display: inline-block;
-  margin: 0;
-}
-
-.series-description-button {
-  display: inline-block;
-  font-size: 1.1em;
-  margin-inline-start: 0.5em;
-  cursor: pointer;
-}
-
-.series-description.hide {
-  display: none;
-}
-
-.credits {
-  margin: 0;
-}
-
-.credits .role {
-  font-weight: bold;
-}
-
-
 /************************
   EPISODE CARD
 *************************/

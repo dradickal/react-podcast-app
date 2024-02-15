@@ -1,0 +1,42 @@
+.header-series {
+    margin-bottom: 1em;
+}
+  
+.header-series h1 {
+    display: inline-block;
+    margin: 0;
+}
+
+.series-description-button {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-inline-start: 0.5em;
+    cursor: pointer;
+}
+
+.series-description {
+    overflow: hidden;
+    max-height: 100px;
+    transition: max-height .4s ease-out;
+}
+
+.series-description p {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+
+.series-description.hide {
+    max-height: 0;
+}
+
+.series-description.hide p {
+    opacity: .3;
+}
+
+.credits {
+    margin: 0;
+}
+
+.credits .role {
+    font-weight: bold;
+}
