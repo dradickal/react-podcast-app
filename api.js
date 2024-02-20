@@ -1,9 +1,18 @@
+import 'dotenv/config';
 import express from 'express';
 
-const app = express();
 
-app.get("/api/hello", (req, res) => {
-  res.json({ hello: "world" });
+const app = express();
+const port = process.env.API_PORT;
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
 });
 
-export const handler = app;
+app.all('*', (req, res) => {
+    res.sendStatus(404);
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on  ${process.env.API_BASEURL}:${port}`);
+});
