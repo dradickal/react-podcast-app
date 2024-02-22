@@ -8,13 +8,14 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "api:dev": "pm2 start api.js --watch",
-    "api": "pm2 start api.js"
+    "api:dev": "pm2 start ./server/api.js --watch ./server",
+    "api": "pm2 start ./server/api.js"
   },
   "dependencies": {
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "pino-http": "^9.0.0",
+    "podcast-api": "^2.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

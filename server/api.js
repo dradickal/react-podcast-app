@@ -9,7 +9,7 @@ const port = process.env.API_PORT;
 app.use(pino());
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World! Again.');
 });
 
 app.all('*', (req, res) => {
