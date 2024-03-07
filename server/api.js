@@ -3,6 +3,7 @@ import express from 'express';
 import pino from 'pino-http';
 import { Client } from 'podcast-api';
 import getPlaylist from './playlist.js';
+import seriesData from './seriesData.js';
 
 const app = express();
 const port = process.env.API_PORT;
@@ -23,6 +24,10 @@ app.get('/rkc-pod-playlist', async (req, res, next) => {
         next(error);
     }
 })
+
+app.get('/series/all', (req, res, next) => {
+    res.json(seriesData);
+});
 
 app.use((req, res, next) => {
     res.sendStatus(404);
