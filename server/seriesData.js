@@ -64,6 +64,16 @@ const seriesData = {
             'network': 'iHeartPodcasts',
         },
     },
+    'the-most-interesting-people': {
+        'apiId': null,
+        'title': 'The Most Interesting People',
+        'image': 'https://dummyimage.com/600x600/000/fff.jpg&text=episode+graphic',
+        'description': ['Listen to the most interesting people from around the world share thier stories in this podcast from RKC.'],
+        'credits': {
+            'host': ' Jonathan Goldsmith',
+            'publisher': 'RKC',
+        }
+    },
     'this-american-life': {
         'apiId': 'c98e2fa600b24af2a5806ee3b8ce5a47',
         'title': 'This American Life',
