@@ -1,13 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-  json,
-} from "react-router-dom";
-import App from './App.jsx'
+  Navigate,
+} from 'react-router-dom';
+import App from './App.jsx';
 import SeriesList from './SeriesList.jsx';
-import './main.css'
+import './main.css';
+import { EpisodeCard } from './EpisodeCard.jsx';
 
 async function fetchSeriesListData () {
   const res = await fetch('/api/series/all');
@@ -19,13 +20,20 @@ async function fetchSeriesListData () {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
-  },
-  {
-    path: "/series",
-    loader: await fetchSeriesListData,
-    element: <SeriesList />,
+    children: [
+      { index: true, element: <Navigate to='/series' replace /> },
+      {
+        path: '/series',
+        loader: await fetchSeriesListData,
+        element: <SeriesList />,
+      },
+      { 
+        path: '/series/:title-slug',
+        element: <EpisodeCard />
+      }
+    ],
   },
 ]);
 

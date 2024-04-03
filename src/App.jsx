@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from 'react-router-dom';
 import { SeriesDescription } from "./SeriesDescription";
 import { EpisodeCard } from "./EpisodeCard";
 
@@ -7,14 +8,18 @@ function PodcastApp() {
         <>
             <div className="header">
                 <h1>RKC Cast</h1>
-                <SeriesDescription />
+                <HeaderDescription />
             </div>
-            <EpisodeCard />
+            <Outlet />
             <div className="player">
                 <p>Application Player</p>
             </div>
         </>
     )
+}
+
+function HeaderDescription() {
+    return <SeriesDescription />
 }
 
 export default PodcastApp;
