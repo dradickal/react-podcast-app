@@ -18,6 +18,14 @@ async function fetchSeriesListData () {
   return res.json();
 }
 
+/**  TO-DO 
+ *    - Move Loader to Root.
+ *    - Update SeriesList to useRouteLoaderData
+ *    - Set up Handler for Episodes Routes with useRouteLoaderData
+ *    - Modify Series Description to with useMatches and handler data
+ *    - Create Episodes route loader with useRouteLoaderData
+ *    - Build out EpisodesList compenent with API data
+*/
 const router = createBrowserRouter([
   {
     path: '/',
