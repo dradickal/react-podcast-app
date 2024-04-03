@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
+import './SeriesList.css';
 
 export default function SeriesList () {
     const seriesData = useLoaderData();
@@ -7,7 +8,7 @@ export default function SeriesList () {
     const images = [];
     for (const series in seriesData) {
         const data = seriesData[series];
-        images.push(<img src={data.image} key={data.id}/>)
+        images.push(<SeriesLink slug={series} imageURL={data.image} />)
     }
     
     useEffect(() => {
@@ -16,8 +17,17 @@ export default function SeriesList () {
 
     return (
         <>
-            <h1>SeriesList</h1>
-            {images}
+            <article className='series-list'>
+                {images}
+            </article>
         </>
     )
+};
+
+function SeriesLink({ slug, imageURL }) {
+    return (
+        <Link to={ slug } key={ slug }>
+            <img src={imageURL} /> 
+        </Link>
+    );
 };

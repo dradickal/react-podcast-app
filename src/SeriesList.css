@@ -1,0 +1,23 @@
+a > img {
+    border: 0;
+}
+
+.series-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: stretch;
+}
+
+.series-list img {
+    max-width: calc(100vw / 3);
+    display: block;
+}
+
+@media screen and (min-width: 900px){
+    .series-list img {
+        width: calc(100vw / 4);
+    }
+}
+
+
+
