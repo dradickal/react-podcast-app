@@ -19,8 +19,6 @@ async function fetchSeriesListData () {
 }
 
 /**  TO-DO 
- *    - Move Loader to Root.
- *    - Update SeriesList to useRouteLoaderData
  *    - Set up Handler for Episodes Routes with useRouteLoaderData
  *    - Modify Series Description to with useMatches and handler data
  *    - Create Episodes route loader with useRouteLoaderData
@@ -30,11 +28,12 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    loader: await fetchSeriesListData,
+    id: "root",
     children: [
       { index: true, element: <Navigate to='/series' replace /> },
       {
         path: '/series',
-        loader: await fetchSeriesListData,
         element: <SeriesList />,
       },
       { 

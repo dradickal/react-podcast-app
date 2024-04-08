@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { useLoaderData, Link } from "react-router-dom";
+import { useRouteLoaderData, Link } from "react-router-dom";
 import './SeriesList.css';
 
 export default function SeriesList () {
-    const seriesData = useLoaderData();
+    const seriesData = useRouteLoaderData("root");
+    ;
 
     const images = [];
     for (const series in seriesData) {
