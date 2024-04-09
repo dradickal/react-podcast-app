@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
+  useRouteLoaderData,
 } from 'react-router-dom';
 import App from './App.jsx';
 import SeriesList from './SeriesList.jsx';
@@ -16,6 +17,11 @@ async function fetchSeriesListData () {
     console.log(error.message);
   }
   return res.json();
+}
+
+async function fetchEpisodeList (id) {
+  console.log(id);
+  return id;
 }
 
 /**  TO-DO 
@@ -37,9 +43,14 @@ const router = createBrowserRouter([
         element: <SeriesList />,
       },
       { 
-        path: '/series/:title-slug',
-        element: <EpisodeCard />
-      }
+        path: '/series/:titleSlug',
+        element: <EpisodeCard />,
+        loader: async ({ params }) => {
+          const { titleSlug } = params;
+
+          return fetchEpisodeList(titleSlug); 
+        },
+      },
     ],
   },
 ]);
