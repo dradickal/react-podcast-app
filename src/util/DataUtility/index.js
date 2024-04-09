@@ -1,0 +1,1 @@
+// Potential Singleton to Capture data from root loader method
