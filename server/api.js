@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import pino from 'pino-http';
 import { Client } from 'podcast-api';
-import getPlaylist from './playlist.js';
+import { getPlaylist, reducePlaylist } from './playlist.js';
 import seriesData from './seriesData.js';
 
 const app = express();
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.send('Hello World! Again.');
 });
 
-app.get('/rkc-pod-playlist', async (req, res, next) => {
+app.get('/raw-playlist', async (req, res, next) => {
     try {
         const response = await getPlaylist(client);
         res.json(response.data);
@@ -23,7 +23,18 @@ app.get('/rkc-pod-playlist', async (req, res, next) => {
     catch (error) {
         next(error);
     }
-})
+});
+
+app.get('/cleaned', async (req, res, next) => {
+    try {
+        const response = await getPlaylist(client);
+        const playlist = response.data;
+        res.json(reducePlaylist(playlist));
+    }
+    catch (error) {
+        next(error);
+    }
+});
 
 app.get('/series/all', (req, res, next) => {
     res.json(seriesData);
@@ -31,7 +42,7 @@ app.get('/series/all', (req, res, next) => {
 
 app.use((req, res, next) => {
     res.sendStatus(404);
-})
+});
 
 app.listen(port, () => {
     console.log(`Example app listening on  ${process.env.API_BASEURL}:${port}`);
