@@ -1,5 +1,5 @@
 const seriesData = {
-    '99-percent-invisible': {
+    '99-invisible': {
         'apiId': '938de7f853b24bf59c7d199b8fba3950',
         'title': '99% Invisible',
         'image': 'https://production.listennotes.com/podcasts/99-invisible-roman-mars-vQyoZCSNjaI-JqxekyhmQi1.300x300.jpg',
