@@ -9,6 +9,7 @@ export function getPlaylist(client) {
 
 /** TO-DO
  *   - Clean up descriptions from API. Split into array by <p>. 
+ *   - Append my custom data for credits, and Easter Egg.
  */
 export function reducePlaylist(responseData) {
     const { items } = responseData;
