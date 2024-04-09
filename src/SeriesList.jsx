@@ -4,7 +4,6 @@ import './SeriesList.css';
 
 export default function SeriesList () {
     const seriesData = useRouteLoaderData("root");
-    ;
 
     const images = [];
     for (const series in seriesData) {
