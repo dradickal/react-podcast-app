@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { Outlet, useMatches } from 'react-router-dom';
 import { SeriesDescription } from "./SeriesDescription";
-import { EpisodeCard } from "./EpisodeCard";
 
 function PodcastApp() {
     const matches = useMatches();
 
-    useEffect(() => {
-        console.log(matches);
-    }, []);
-    
+    // useEffect(() => {
+    //     console.log(matches);
+    // }, []);
+
     return (
         <>
             <div className="header">
