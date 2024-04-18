@@ -6,10 +6,9 @@ export default function SeriesList () {
     const seriesData = useRouteLoaderData("root");
 
     const images = [];
-    for (const series in seriesData) {
-        const data = seriesData[series];
-        images.push(<SeriesLink slug={series} imageURL={data.image} />)
-    }
+    seriesData.forEach(series => {
+        images.push(<SeriesLink slug={series.slug} imageURL={series.image} />);
+    });
     
     useEffect(() => {
         console.log(seriesData);
