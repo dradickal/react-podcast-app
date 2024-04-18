@@ -25,7 +25,7 @@ app.get('/raw-playlist', async (req, res, next) => {
     }
 });
 
-app.get('/cleaned', async (req, res, next) => {
+app.get('/series/all', async (req, res, next) => {
     try {
         const response = await getPlaylist(client);
         const playlist = response.data;
@@ -36,7 +36,7 @@ app.get('/cleaned', async (req, res, next) => {
     }
 });
 
-app.get('/series/all', (req, res, next) => {
+app.get('/seriesData', (req, res, next) => {
     res.json(seriesData);
 });
 
