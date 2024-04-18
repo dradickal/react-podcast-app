@@ -4,24 +4,22 @@ import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
-  useRouteLoaderData,
 } from 'react-router-dom';
+import { getSeriesListData } from './util/DataUtility';
 import App from './App.jsx';
 import SeriesList from './SeriesList.jsx';
 import './main.css';
 import { EpisodeCard } from './EpisodeCard.jsx';
 
-async function fetchSeriesListData () {
-  const res = await fetch('/api/series/all');
-  if(res.error) {
-    console.log(error.message);
-  }
-  return res.json();
-}
-
 async function fetchEpisodeList (id) {
   console.log(id);
   return id;
+}
+
+function findSeriesID(data, slug) {
+  const series = data.find((obj) => obj['slug'] === slug);
+  console.log(series);
+  return series['id'];
 }
 
 /**  TO-DO 
@@ -34,7 +32,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    loader: await fetchSeriesListData,
+    loader: await getSeriesListData,
     id: "root",
     children: [
       { index: true, element: <Navigate to='/series' replace /> },
@@ -47,8 +45,9 @@ const router = createBrowserRouter([
         element: <EpisodeCard />,
         loader: async ({ params }) => {
           const { titleSlug } = params;
-
-          return fetchEpisodeList(titleSlug); 
+          const data = await getSeriesListData();
+          
+          return fetchEpisodeList(findSeriesID(data, titleSlug)); 
         },
       },
     ],
