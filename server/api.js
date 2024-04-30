@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.send('Hello World! Again.');
 });
 
-app.get('/raw-playlist', async (req, res, next) => {
+app.get('/podcasts/raw/all', async (req, res, next) => {
     try {
         const response = await getPlaylist(client);
         res.json(response.data);
@@ -26,7 +26,7 @@ app.get('/raw-playlist', async (req, res, next) => {
     }
 });
 
-app.get('/series/all', async (req, res, next) => {
+app.get('/podcasts/all', async (req, res, next) => {
     try {
         const response = await getPlaylist(client);
         const playlist = response.data;
