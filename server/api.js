@@ -48,7 +48,7 @@ app.get('/podcasts/raw/:id', async (req, res, next) => {
     }
 });
 
-app.get('/podcast/:id', async (req, res, next) => {
+app.get('/podcasts/:id', async (req, res, next) => {
     try {
         const { id } = req.params;
         const response = await getPodcast(client, id);

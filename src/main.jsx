@@ -5,7 +5,7 @@ import {
   RouterProvider,
   Navigate,
 } from 'react-router-dom';
-import { getSeriesListData } from './util/DataUtility';
+import { getSeriesListData, getPodcastData } from './util/DataUtility';
 import App from './App.jsx';
 import SeriesList from './SeriesList.jsx';
 import './main.css';
@@ -46,8 +46,9 @@ const router = createBrowserRouter([
         loader: async ({ params }) => {
           const { titleSlug } = params;
           const data = await getSeriesListData();
+          const podcastId = findSeriesID(data, titleSlug);
           
-          return fetchEpisodeList(findSeriesID(data, titleSlug)); 
+          return getPodcastData(podcastId); 
         },
       },
     ],
