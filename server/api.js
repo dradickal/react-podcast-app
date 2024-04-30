@@ -3,6 +3,7 @@ import express from 'express';
 import pino from 'pino-http';
 import { Client } from 'podcast-api';
 import { getPlaylist, reducePlaylist } from './playlist.js';
+import { getPodcast, reducePodcast } from './podcast.js';
 import seriesData from './seriesData.js';
 
 const app = express();
@@ -30,6 +31,29 @@ app.get('/series/all', async (req, res, next) => {
         const response = await getPlaylist(client);
         const playlist = response.data;
         res.json(reducePlaylist(playlist));
+    }
+    catch (error) {
+        next(error);
+    }
+});
+
+app.get('/podcasts/raw/:id', async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const response = await getPodcast(client, id);
+        res.json(response.data);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+
+app.get('/podcast/:id', async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const response = await getPodcast(client, id);
+        const series = response.data;
+        res.json(reducePodcast(series));
     }
     catch (error) {
         next(error);
