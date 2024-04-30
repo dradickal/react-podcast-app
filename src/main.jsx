@@ -9,16 +9,11 @@ import { getSeriesListData, getPodcastData } from './util/DataUtility';
 import App from './App.jsx';
 import SeriesList from './SeriesList.jsx';
 import './main.css';
-import { EpisodeCard } from './EpisodeCard.jsx';
-
-async function fetchEpisodeList (id) {
-  console.log(id);
-  return id;
-}
+import EpisodeList from './EpisodeList.jsx';
 
 function findSeriesID(data, slug) {
   const series = data.find((obj) => obj['slug'] === slug);
-  console.log(series);
+
   return series['id'];
 }
 
@@ -42,7 +37,7 @@ const router = createBrowserRouter([
       },
       { 
         path: '/series/:titleSlug',
-        element: <EpisodeCard />,
+        element: <EpisodeList />,
         loader: async ({ params }) => {
           const { titleSlug } = params;
           const data = await getSeriesListData();

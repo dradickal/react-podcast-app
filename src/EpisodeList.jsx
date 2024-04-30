@@ -1,18 +1,20 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { SeriesDescription } from "./SeriesDescription";
 import { EpisodeCard } from "./EpisodeCard";
 
 function EpisodeList() {
+    const podcastData = useLoaderData();
+    const { episodes } = podcastData;
+    
+    const EpisodeCards = [];
+    episodes.forEach(episode => {
+        EpisodeCards.push(<EpisodeCard episode={episode} key={episode.id}/>);
+    });
+
     return (
         <>
-            <div className="header">
-                <h1>RKC Cast</h1>
-                <SeriesDescription />
-            </div>
-            <EpisodeCard />
-            <div className="player">
-                <p>Application Player</p>
-            </div>
+            {EpisodeCards}
         </>
     )
 }

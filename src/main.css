@@ -2,6 +2,7 @@
   display: flow-root;
   width: 100vw;
   background-color: white;
+  margin-bottom: 5rem;
 }
 
 /************************
@@ -199,7 +200,7 @@
 *************************/
 
 .player {
-  position: absolute;
+  position: fixed;
   background: white;
   width: 100vw;
   bottom: 0;
