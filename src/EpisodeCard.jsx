@@ -40,7 +40,7 @@ function timecodeFromSec(seconds)
     return time.map(v => v.toString().padStart(2, '0')).join(':');
 }
 
-export function EpisodeCard({episode}) {
+export function EpisodeCard({episode, podcastImg}) {
     const [listeningStatus, setListeningStatus] = useState(null);
     const [downloadStatus, setDownloadStatus] = useState(null);
     const [queueStatus, setQueueStatus] = useState(null);
@@ -80,7 +80,9 @@ export function EpisodeCard({episode}) {
                 <i className="episode-menu fas fa-ellipsis-v"></i>
             </div>
             <div className="episode-image">
-                <img src={episode.image} alt="Episode Graphic" />
+                <object data={episode.image} aria-label="Episode Graphic">
+                    <img src={podcastImg} alt="Episode Graphic" />
+                </object>
             </div>
             <div className="episode-description">
                 <p>We had a great conversation with Jon Hamm. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt purus eu mauris gravida, id porta lacus semper. Sed vitae tortor sit amet odio posuere maximus eget at tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per.</p>
