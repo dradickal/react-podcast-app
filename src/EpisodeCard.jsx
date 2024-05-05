@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {timeSincePublished} from "./util/dateComparison";
 
 const actionButtonIcons = {
     'null': 'far fa-arrow-to-bottom',
@@ -27,7 +28,19 @@ const listeningStatusIcons = {
     'complete': 'far fa-check',
 };
 
-export function EpisodeCard() {
+function timecodeFromSec(seconds)
+{
+    const sec = Math.round(seconds);
+    const time =[ 
+        Math.floor(sec / 3600),
+        Math.floor(sec / 60) % 60,
+        Math.floor(sec % 60),
+    ];
+    
+    return time.map(v => v.toString().padStart(2, '0')).join(':');
+}
+
+export function EpisodeCard({episode}) {
     const [listeningStatus, setListeningStatus] = useState(null);
     const [downloadStatus, setDownloadStatus] = useState(null);
     const [queueStatus, setQueueStatus] = useState(null);
@@ -60,14 +73,14 @@ export function EpisodeCard() {
     return (
         <article className="episode-card">
             <div className="episode-header-title">
-                <h1>Conversation with Jon Hamm</h1>
+                <h1>{episode.title}</h1>
             </div>
             <div className="episode-header-right">
-                <span className="episode-date">2m</span>
+                <span className="episode-date">{timeSincePublished(episode.published)}</span>
                 <i className="episode-menu fas fa-ellipsis-v"></i>
             </div>
             <div className="episode-image">
-                <img src="https://dummyimage.com/600x600/000/fff.jpg&text=episode+graphic" alt="Episode Graphic" />
+                <img src={episode.image} alt="Episode Graphic" />
             </div>
             <div className="episode-description">
                 <p>We had a great conversation with Jon Hamm. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt purus eu mauris gravida, id porta lacus semper. Sed vitae tortor sit amet odio posuere maximus eget at tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per.</p>
@@ -81,7 +94,7 @@ export function EpisodeCard() {
                     <i className={downloadStatusClass}></i>
                     <i className={queueStatusClass}></i>
                 </span>
-                <span className="episode-footer-duration">01:23:36</span>
+                <span className="episode-footer-duration">{timecodeFromSec(episode.audio.length)}</span>
             </div>
         </article>
     )
