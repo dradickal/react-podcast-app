@@ -80,7 +80,7 @@ export function EpisodeCard({episode, podcastImg}) {
                 <i className="episode-menu fas fa-ellipsis-v"></i>
             </div>
             <div className="episode-image">
-                <object data={episode.image} aria-label="Episode Graphic">
+                <object data={episode.image} type="img/jpeg" aria-label="Episode Graphic">
                     <img src={podcastImg} alt="Episode Graphic" />
                 </object>
             </div>
