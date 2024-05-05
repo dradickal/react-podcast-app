@@ -30,9 +30,6 @@ export function timeSincePublished(timestamp, comp) {
     const diffDays = diff / (1000*3600*24);
     let ageString = "new";
 
-    console.log('diff', diff);
-    console.log('diffDays', diffDays);
-
     if (diffDays > 1 && diffDays < 29) {
         ageString = `${Math.round(diffDays)}d`
     }
@@ -40,8 +37,6 @@ export function timeSincePublished(timestamp, comp) {
     if (diffDays >= 29) {
         const diffMonths = (now.getMonth()+12*now.getFullYear())-(published.getMonth()+12*published.getFullYear());
         const diffYears = now.getFullYear() - published.getFullYear();
-
-        console.log(diffMonths);
 
         ageString = diffMonths < 12 ? `${diffMonths}m` : `${diffYears}y`;
     }
