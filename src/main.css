@@ -81,7 +81,7 @@
   cursor: pointer;
 }
 
-.episode-description p {
+.episode-description {
   max-height: 4.8em;
   overflow: hidden;
   margin: 0em 0em 0em .3em;

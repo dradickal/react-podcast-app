@@ -1,0 +1,535 @@
+<ref *1> HTMLElement {
+  parentNode: null,
+  childNodes: [
+    <ref *2> HTMLElement {
+      parentNode: [Circular *1],
+      childNodes: [
+        TextNode {
+          parentNode: [Circular *2],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: "Gladiators in the Colosseum. Sideshow performers. Reality television. We've always loved to gawk at the misery or\n" +
+            "    majesty of others. But this week, we ask the question: What's it like when the tables are turned and all eyes are on\n" +
+            '    you?\\n'
+        }
+      ],
+      rawAttrs: '',
+      voidTag: VoidTag {
+        addClosingSlash: false,
+        voidTags: Set(28) {
+          'area',
+          'AREA',
+          'base',
+          'BASE',
+          'br',
+          'BR',
+          'col',
+          'COL',
+          'embed',
+          'EMBED',
+          'hr',
+          'HR',
+          'img',
+          'IMG',
+          'input',
+          'INPUT',
+          'link',
+          'LINK',
+          'meta',
+          'META',
+          'param',
+          'PARAM',
+          'source',
+          'SOURCE',
+          'track',
+          'TRACK',
+          'wbr',
+          'WBR'
+        }
+      },
+      nodeType: 1,
+      rawTagName: 'p',
+      id: '',
+      _parseOptions: {},
+      classList: DOMTokenList {
+        _set: Set(0) {},
+        _afterUpdate: [Function (anonymous)]
+      }
+    },
+    TextNode {
+      parentNode: [Circular *1],
+      childNodes: [],
+      nodeType: 3,
+      rawTagName: '',
+      _rawText: '\n'
+    },
+    <ref *3> HTMLElement {
+      parentNode: [Circular *1],
+      childNodes: [
+        TextNode {
+          parentNode: [Circular *3],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: '\n    '
+        },
+        <ref *4> HTMLElement {
+          parentNode: [Circular *3],
+          childNodes: [
+            TextNode {
+              parentNode: [Circular *4],
+              childNodes: [],
+              nodeType: 3,
+              rawTagName: '',
+              _rawText: 'Prologue: Ira talks to Joel Gold, a psychologist and author, about a strangely common delusion known as the\n' +
+                '        "Truman Show Delusion," in which patients believe that they are being filmed, 24/7, for a national reality\n' +
+                '        television program. (6 minutes)'
+            }
+          ],
+          rawAttrs: '',
+          voidTag: VoidTag {
+            addClosingSlash: false,
+            voidTags: Set(28) {
+              'area',
+              'AREA',
+              'base',
+              'BASE',
+              'br',
+              'BR',
+              'col',
+              'COL',
+              'embed',
+              'EMBED',
+              'hr',
+              'HR',
+              'img',
+              'IMG',
+              'input',
+              'INPUT',
+              'link',
+              'LINK',
+              'meta',
+              'META',
+              'param',
+              'PARAM',
+              'source',
+              'SOURCE',
+              'track',
+              'TRACK',
+              'wbr',
+              'WBR'
+            }
+          },
+          nodeType: 1,
+          rawTagName: 'li',
+          id: '',
+          _parseOptions: {},
+          classList: DOMTokenList {
+            _set: Set(0) {},
+            _afterUpdate: [Function (anonymous)]
+          }
+        },
+        TextNode {
+          parentNode: [Circular *3],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: '\n    '
+        },
+        <ref *5> HTMLElement {
+          parentNode: [Circular *3],
+          childNodes: [
+            TextNode {
+              parentNode: [Circular *5],
+              childNodes: [],
+              nodeType: 3,
+              rawTagName: '',
+              _rawText: 'Act One: Producer Stephanie Foo speaks to Nasubi, a Japanese comedian who, in the 90s, just wanted a little bit\n' +
+                '        of fame. So he was thrilled when he won an opportunity to have his own segment on a Japanese reality TV show.\n' +
+                '        Until he found out the premise: he had to sit in an empty apartment with no food, clothes or contact with the\n' +
+                '        outside world, enter sweepstakes from magazines… and hope that he won enough sustenance to survive. (23 minutes)\n' +
+                '    '
+            }
+          ],
+          rawAttrs: '',
+          voidTag: VoidTag {
+            addClosingSlash: false,
+            voidTags: Set(28) {
+              'area',
+              'AREA',
+              'base',
+              'BASE',
+              'br',
+              'BR',
+              'col',
+              'COL',
+              'embed',
+              'EMBED',
+              'hr',
+              'HR',
+              'img',
+              'IMG',
+              'input',
+              'INPUT',
+              'link',
+              'LINK',
+              'meta',
+              'META',
+              'param',
+              'PARAM',
+              'source',
+              'SOURCE',
+              'track',
+              'TRACK',
+              'wbr',
+              'WBR'
+            }
+          },
+          nodeType: 1,
+          rawTagName: 'li',
+          id: '',
+          _parseOptions: {},
+          classList: DOMTokenList {
+            _set: Set(0) {},
+            _afterUpdate: [Function (anonymous)]
+          }
+        },
+        TextNode {
+          parentNode: [Circular *3],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: '\n    '
+        },
+        <ref *6> HTMLElement {
+          parentNode: [Circular *3],
+          childNodes: [
+            TextNode {
+              parentNode: [Circular *6],
+              childNodes: [],
+              nodeType: 3,
+              rawTagName: '',
+              _rawText: 'Act Two: Writer Ariel Sabar tells the story of Roger Barker, a psychologist who believed humans should be\n' +
+                '        studied outside the lab. So Barker dispatched an army of graduate students to follow the children of Oskaloosa,\n' +
+                '        Kansas, and write down every single thing they did. Sabar wrote a book about Roger Barker called "The Outsider."\n' +
+                '        (8 minutes)'
+            }
+          ],
+          rawAttrs: '',
+          voidTag: VoidTag {
+            addClosingSlash: false,
+            voidTags: Set(28) {
+              'area',
+              'AREA',
+              'base',
+              'BASE',
+              'br',
+              'BR',
+              'col',
+              'COL',
+              'embed',
+              'EMBED',
+              'hr',
+              'HR',
+              'img',
+              'IMG',
+              'input',
+              'INPUT',
+              'link',
+              'LINK',
+              'meta',
+              'META',
+              'param',
+              'PARAM',
+              'source',
+              'SOURCE',
+              'track',
+              'TRACK',
+              'wbr',
+              'WBR'
+            }
+          },
+          nodeType: 1,
+          rawTagName: 'li',
+          id: '',
+          _parseOptions: {},
+          classList: DOMTokenList {
+            _set: Set(0) {},
+            _afterUpdate: [Function (anonymous)]
+          }
+        },
+        TextNode {
+          parentNode: [Circular *3],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: '\n    '
+        },
+        <ref *7> HTMLElement {
+          parentNode: [Circular *3],
+          childNodes: [
+            TextNode {
+              parentNode: [Circular *7],
+              childNodes: [],
+              nodeType: 3,
+              rawTagName: '',
+              _rawText: 'Act Three: Charlie Brill and Mitzi McCall were a comedy duo back in the mid-1960s, playing clubs around Los\n' +
+                "        Angeles, when their agent called to tell them he'd landed them the gig of a lifetime: They were going to be on\n" +
+                '        The Ed Sullivan Show. The only problem was that their performance was a total fiasco, for a bunch of reasons,\n' +
+                '        including one they never saw coming. David Segal reports. (17 minutes)'
+            }
+          ],
+          rawAttrs: '',
+          voidTag: VoidTag {
+            addClosingSlash: false,
+            voidTags: Set(28) {
+              'area',
+              'AREA',
+              'base',
+              'BASE',
+              'br',
+              'BR',
+              'col',
+              'COL',
+              'embed',
+              'EMBED',
+              'hr',
+              'HR',
+              'img',
+              'IMG',
+              'input',
+              'INPUT',
+              'link',
+              'LINK',
+              'meta',
+              'META',
+              'param',
+              'PARAM',
+              'source',
+              'SOURCE',
+              'track',
+              'TRACK',
+              'wbr',
+              'WBR'
+            }
+          },
+          nodeType: 1,
+          rawTagName: 'li',
+          id: '',
+          _parseOptions: {},
+          classList: DOMTokenList {
+            _set: Set(0) {},
+            _afterUpdate: [Function (anonymous)]
+          }
+        },
+        TextNode {
+          parentNode: [Circular *3],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: '\n'
+        }
+      ],
+      rawAttrs: '',
+      voidTag: VoidTag {
+        addClosingSlash: false,
+        voidTags: Set(28) {
+          'area',
+          'AREA',
+          'base',
+          'BASE',
+          'br',
+          'BR',
+          'col',
+          'COL',
+          'embed',
+          'EMBED',
+          'hr',
+          'HR',
+          'img',
+          'IMG',
+          'input',
+          'INPUT',
+          'link',
+          'LINK',
+          'meta',
+          'META',
+          'param',
+          'PARAM',
+          'source',
+          'SOURCE',
+          'track',
+          'TRACK',
+          'wbr',
+          'WBR'
+        }
+      },
+      nodeType: 1,
+      rawTagName: 'ul',
+      id: '',
+      _parseOptions: {},
+      classList: DOMTokenList {
+        _set: Set(0) {},
+        _afterUpdate: [Function (anonymous)]
+      }
+    },
+    TextNode {
+      parentNode: [Circular *1],
+      childNodes: [],
+      nodeType: 3,
+      rawTagName: '',
+      _rawText: '\n'
+    },
+    <ref *8> HTMLElement {
+      parentNode: [Circular *1],
+      childNodes: [
+        TextNode {
+          parentNode: [Circular *8],
+          childNodes: [],
+          nodeType: 3,
+          rawTagName: '',
+          _rawText: 'Transcripts are available at '
+        },
+        <ref *9> HTMLElement {
+          parentNode: [Circular *8],
+          childNodes: [
+            TextNode {
+              parentNode: [Circular *9],
+              childNodes: [],
+              nodeType: 3,
+              rawTagName: '',
+              _rawText: 'thisamericanlife.org'
+            }
+          ],
+          rawAttrs: 'href="https://www.thisamericanlife.org/568/transcript"',
+          voidTag: VoidTag {
+            addClosingSlash: false,
+            voidTags: Set(28) {
+              'area',
+              'AREA',
+              'base',
+              'BASE',
+              'br',
+              'BR',
+              'col',
+              'COL',
+              'embed',
+              'EMBED',
+              'hr',
+              'HR',
+              'img',
+              'IMG',
+              'input',
+              'INPUT',
+              'link',
+              'LINK',
+              'meta',
+              'META',
+              'param',
+              'PARAM',
+              'source',
+              'SOURCE',
+              'track',
+              'TRACK',
+              'wbr',
+              'WBR'
+            }
+          },
+          nodeType: 1,
+          rawTagName: 'a',
+          id: '',
+          _parseOptions: {},
+          classList: DOMTokenList {
+            _set: Set(0) {},
+            _afterUpdate: [Function (anonymous)]
+          }
+        }
+      ],
+      rawAttrs: '',
+      voidTag: VoidTag {
+        addClosingSlash: false,
+        voidTags: Set(28) {
+          'area',
+          'AREA',
+          'base',
+          'BASE',
+          'br',
+          'BR',
+          'col',
+          'COL',
+          'embed',
+          'EMBED',
+          'hr',
+          'HR',
+          'img',
+          'IMG',
+          'input',
+          'INPUT',
+          'link',
+          'LINK',
+          'meta',
+          'META',
+          'param',
+          'PARAM',
+          'source',
+          'SOURCE',
+          'track',
+          'TRACK',
+          'wbr',
+          'WBR'
+        }
+      },
+      nodeType: 1,
+      rawTagName: 'p',
+      id: '',
+      _parseOptions: {},
+      classList: DOMTokenList {
+        _set: Set(0) {},
+        _afterUpdate: [Function (anonymous)]
+      }
+    }
+  ],
+  rawAttrs: '',
+  voidTag: VoidTag {
+    addClosingSlash: false,
+    voidTags: Set(28) {
+      'area',
+      'AREA',
+      'base',
+      'BASE',
+      'br',
+      'BR',
+      'col',
+      'COL',
+      'embed',
+      'EMBED',
+      'hr',
+      'HR',
+      'img',
+      'IMG',
+      'input',
+      'INPUT',
+      'link',
+      'LINK',
+      'meta',
+      'META',
+      'param',
+      'PARAM',
+      'source',
+      'SOURCE',
+      'track',
+      'TRACK',
+      'wbr',
+      'WBR'
+    }
+  },
+  nodeType: 1,
+  rawTagName: null,
+  id: '',
+  _parseOptions: {},
+  classList: DOMTokenList {
+    _set: Set(0) {},
+    _afterUpdate: [Function (anonymous)]
+  }
+}

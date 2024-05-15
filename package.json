@@ -14,10 +14,13 @@
   "dependencies": {
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
+    "node-html-markdown": "^1.3.0",
+    "node-html-parser": "^6.1.13",
     "pino-http": "^9.0.0",
     "podcast-api": "^2.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {

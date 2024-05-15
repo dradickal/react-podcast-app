@@ -1,4 +1,5 @@
 import { useState } from "react";
+// import ReactMarkdown from 'react-markdown';
 import {timeSincePublished} from "./util/dateComparison";
 
 const actionButtonIcons = {
@@ -85,7 +86,7 @@ export function EpisodeCard({episode, podcastImg}) {
                 </object>
             </div>
             <div className="episode-description">
-                <p>We had a great conversation with Jon Hamm. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt purus eu mauris gravida, id porta lacus semper. Sed vitae tortor sit amet odio posuere maximus eget at tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per.</p>
+                <p>{episode.brief}</p>
             </div>
             <div className="episode-action">
                 <i className={actionButtonClass + ' episode-action-icon'} onClick={actionClick}></i>
