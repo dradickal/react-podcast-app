@@ -45,6 +45,7 @@ export function EpisodeCard({episode, podcastImg}) {
     const [listeningStatus, setListeningStatus] = useState(null);
     const [downloadStatus, setDownloadStatus] = useState(null);
     const [queueStatus, setQueueStatus] = useState(null);
+    const useEllipse = episode.brief.length > 485;
 
     let actionButtonClass = actionButtonIcons[downloadStatus];
     let queueStatusClass = queueStatusIcons[queueStatus];
@@ -86,7 +87,7 @@ export function EpisodeCard({episode, podcastImg}) {
                 </object>
             </div>
             <div className="episode-description">
-                <p>{episode.brief}</p>
+                <p>{episode.brief} {useEllipse ? '\u2026' : ''}</p>
             </div>
             <div className="episode-action">
                 <i className={actionButtonClass + ' episode-action-icon'} onClick={actionClick}></i>

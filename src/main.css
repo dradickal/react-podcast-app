@@ -82,9 +82,22 @@
 }
 
 .episode-description {
-  max-height: 4.8em;
-  overflow: hidden;
   margin: 0em 0em 0em .3em;
+  position: relative;
+}
+
+.episode-description:before {
+  content: '&nbsp;';
+  visibility: hidden;
+}
+
+.episode-description p {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .episode-image img, .episode-image object {
