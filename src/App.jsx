@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useMatches } from 'react-router-dom';
-import { SeriesDescription } from "./SeriesDescription";
+import { SeriesHeader } from "./SeriesHeader";
 
 function PodcastApp() {
     const matches = useMatches();
@@ -13,7 +13,7 @@ function PodcastApp() {
         <>
             <div className="header">
                 <h1>RKC Cast</h1>
-                <HeaderDescription />
+                <SeriesHeader />
             </div>
             <Outlet />
             <div className="player">
@@ -21,10 +21,6 @@ function PodcastApp() {
             </div>
         </>
     )
-}
-
-function HeaderDescription() {
-    return <SeriesDescription />
 }
 
 export default PodcastApp;
