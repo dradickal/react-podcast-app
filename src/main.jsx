@@ -45,6 +45,14 @@ const router = createBrowserRouter([
           
           return getPodcastData(podcastId); 
         },
+        handle: {
+          seriesData: (data) => {
+            console.log('seriesData Prop', data);
+            return { 
+              get: (prop) => Object.hasOwn(data, prop) ? data[prop] : null, 
+            }; 
+          }
+        }
       },
     ],
   },
