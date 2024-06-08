@@ -86,10 +86,10 @@
   position: relative;
 }
 
-.episode-description:before {
+/* .episode-description:before {
   content: '&nbsp;';
   visibility: hidden;
-}
+} */
 
 .episode-description p {
   margin: 0;
