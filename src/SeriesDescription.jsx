@@ -1,7 +1,8 @@
 import captureKeyboardEvent from './util/captureKeyboardEvent';
 import './SeriesDescription.css';
 
-export function SeriesDescription() {
+export function SeriesDescription({title, description, credits}) {
+    
     function toggleDescription(e) {
         e.preventDefault();
         const el = e.currentTarget;
@@ -25,25 +26,23 @@ export function SeriesDescription() {
 
     return (
         <>
-            <section className="header-series">
-                <h1>The Most Interesting People</h1>
-                <span 
-                    className="series-description-button" 
-                    role="button" 
-                    onClick={toggleDescription}
-                    onKeyDown={keyboardTrigger} 
-                    tabIndex="0" 
-                    aria-expanded="false" 
-                    aria-controls="series-description"
-                    aria-label="Toggle view of series description">
-                    <i className="fas fa-info-circle"></i>
-                </span>
-                <div id="series-description" className="series-description hide" aria-hidden="true">
-                    <p>Listen to the most interesting people from around the world share thier stories in this podcast from RKC.</p>
-                    <p className="credits"><b className="role">Host:</b> Jonathan Goldsmith</p>
-                    <p className="credits"><b className="role">Produced by:</b> RKC</p>
-                </div>
-            </section>
+            <h1>{title}</h1>
+            <span 
+                className="series-description-button" 
+                role="button" 
+                onClick={toggleDescription}
+                onKeyDown={keyboardTrigger} 
+                tabIndex="0" 
+                aria-expanded="false" 
+                aria-controls="series-description"
+                aria-label="Toggle view of series description">
+                <i className="fas fa-info-circle"></i>
+            </span>
+            <div id="series-description" className="series-description hide" aria-hidden="true">
+                {description}
+                <p className="credits"><b className="role">Host:</b> Jonathan Goldsmith</p>
+                <p className="credits"><b className="role">Produced by:</b> RKC</p>
+            </div>
         </>
     )
 }
