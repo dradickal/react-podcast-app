@@ -21,6 +21,7 @@ export function reducePodcast(responseData) {
     return {
         id: responseData.id,
         title: responseData.title,
+        description: responseData.description,
         image: responseData.image,
         episodes: responseData.episodes.reduce(episodeReducer, []),
     }
