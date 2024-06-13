@@ -1,4 +1,5 @@
 import captureKeyboardEvent from './util/captureKeyboardEvent';
+import ReactMarkdown from 'react-markdown';
 import './SeriesDescription.css';
 
 export function SeriesDescription({title, description, credits}) {
@@ -39,7 +40,7 @@ export function SeriesDescription({title, description, credits}) {
                 <i className="fas fa-info-circle"></i>
             </span>
             <div id="series-description" className="series-description hide" aria-hidden="true">
-                {description}
+                <ReactMarkdown>{description}</ReactMarkdown>
                 <p className="credits"><b className="role">Host:</b> Jonathan Goldsmith</p>
                 <p className="credits"><b className="role">Produced by:</b> RKC</p>
             </div>
