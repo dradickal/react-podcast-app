@@ -1,7 +1,6 @@
 #root {
   display: flow-root;
   width: 100vw;
-  background-color: white;
   margin-bottom: 5rem;
 }
 
@@ -12,6 +11,8 @@
   background-color: lightskyblue;
   display: flow-root;
   padding-left: 1em;
+  position: relative;
+  z-index: 10;
 }
 
 /************************
@@ -21,6 +22,9 @@
 .episode-card {
   height: 8.5rem;
   padding: .3rem;
+  margin-bottom: 7px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 4px, rgba(0, 0, 0, 0.23) 0px 3px 4px;
+  background-color: white;
   display: grid;
   grid-template-columns: 114px auto 10%;
   grid-template-rows: 0.5fr 2fr 0.5fr;
@@ -35,6 +39,7 @@
 @media screen and (min-width: 900px) {
   .episode-card {
       grid-template-columns: 128px auto 8%;
+      margin-bottom: 10px;
   }
 }
 

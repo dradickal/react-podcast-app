@@ -15,9 +15,11 @@
 }
 
 .series-description {
-    overflow: hidden;
-    max-height: 115px;
-    transition: max-height .4s ease-out;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-right: 1.2em;
+    max-height: 190px;
+    transition: max-height .5s ease-out;
 }
 
 .series-description p {
