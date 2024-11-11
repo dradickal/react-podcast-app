@@ -6,7 +6,7 @@ import { getPlaylist, reducePlaylist } from './playlist.js';
 import { getPodcast, reducePodcast } from './podcast.js';
 import seriesData from './seriesData.js';
 
-const app = express();
+export const app = express();
 const port = process.env.API_PORT;
 const client = Client({ apiKey: process.env.LN_KEY });
 
