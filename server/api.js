@@ -65,12 +65,15 @@ app.get('/podcasts/:id', async (req, res, next) => {
     }
 });
 
-app.get('/seriesData', (req, res, next) => {
+app.get('/podcasts/seriesData', (req, res, next) => {
     res.json(seriesData);
 });
 
 app.use((req, res, next) => {
-    res.status(404).send("Express couldn't match route");
+    res.status(404).send({
+        status: 404,
+        message: "Not Found"
+    });
 });
 
 app.listen(port, () => {
