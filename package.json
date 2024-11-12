@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "api:dev": "pm2 start ./server/api.js --watch ./server",
-    "api:build": "npx esbuild server/api.js --platform=node --outfile=dist-server/main2.js",
+    "api:build": "npx esbuild server/api.js --bundle --platform=node --outfile=dist-server/main.js",
     "api": "pm2 start ./server/api.js"
   },
   "dependencies": {

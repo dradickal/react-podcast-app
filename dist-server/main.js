@@ -38635,7 +38635,7 @@ app.get("/seriesData", (req, res, next) => {
   res.json(seriesData_default);
 });
 app.use((req, res, next) => {
-  res.sendStatus(404);
+  res.status(404).send("Express couldn't match route");
 });
 app.listen(port, () => {
   console.log(`Example app listening on ${port}`);

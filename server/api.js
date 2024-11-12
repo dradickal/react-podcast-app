@@ -70,7 +70,7 @@ app.get('/seriesData', (req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    res.sendStatus(404);
+    res.status(404).send("Express couldn't match route");
 });
 
 app.listen(port, () => {
