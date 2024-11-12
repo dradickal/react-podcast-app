@@ -7,8 +7,13 @@ import { getPodcast, reducePodcast } from './podcast.js';
 import seriesData from './seriesData.js';
 
 export const app = express();
-const port = process.env.API_PORT;
+let port = process.env.API_PORT;
 const client = Client({ apiKey: process.env.LN_KEY });
+
+if (typeof(PhusionPassenger) !== 'undefined') {
+    PhusionPassenger.configure({ autoInstall: false });
+    port = "passenger";
+}
 
 app.use(pino());
 
@@ -69,5 +74,5 @@ app.use((req, res, next) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on  ${process.env.API_BASEURL}:${port}`);
+    console.log(`Example app listening on ${port}`);
 });
