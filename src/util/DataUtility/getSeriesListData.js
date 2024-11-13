@@ -11,7 +11,7 @@ function fetchSeriesAll () {
         return seriesListRes;
     }
 
-    seriesListRes = fetch('/api/podcasts/all')
+    seriesListRes = fetch(`${BASE_API}/podcasts/all`)
         .then((res) => {
             if (res.error) {
                 throw Error(error.message);

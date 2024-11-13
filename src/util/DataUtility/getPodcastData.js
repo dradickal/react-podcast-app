@@ -1,7 +1,7 @@
 function getPodcastData(podcastId, sort, pageId) {
     let res = null;
     try {
-        res = fetch(`/api/podcasts/${podcastId}`);
+        res = fetch(`${BASE_API}/podcasts/${podcastId}`);
     } catch (error) {
         throw Error(error.message);
     }
