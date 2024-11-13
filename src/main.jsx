@@ -23,20 +23,21 @@ function findSeriesID(data, slug) {
  *    - Create Episodes route loader with useRouteLoaderData
  *    - Build out EpisodesList compenent with API data
 */
+const ROOT_PATH = '/demo/podcast-web-app'
 const router = createBrowserRouter([
   {
-    path: '/demo/podcast-web-app',
+    path: `${ROOT_PATH}`,
     element: <App />,
     loader: await getSeriesListData,
     id: "root",
     children: [
       { index: true, element: <Navigate to='/series' replace /> },
       {
-        path: '/series',
+        path: `${ROOT_PATH}/series`,
         element: <SeriesList />,
       },
       { 
-        path: '/series/:titleSlug',
+        path: `${ROOT_PATH}/series/:titleSlug`,
         element: <EpisodeList />,
         loader: async ({ params }) => {
           const { titleSlug } = params;
