@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     loader: await getSeriesListData,
     id: "root",
     children: [
-      { index: true, element: <Navigate to='/series' replace /> },
+      { index: true, element: <Navigate to={`${ROOT_PATH}/series`} replace /> },
       {
         path: `${ROOT_PATH}/series`,
         element: <SeriesList />,
