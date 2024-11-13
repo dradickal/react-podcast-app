@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import pino from 'pino-http';
 import { Client } from 'podcast-api';
 import { getPlaylist, reducePlaylist } from './playlist.js';
@@ -16,6 +17,23 @@ if (typeof(PhusionPassenger) !== 'undefined') {
 }
 
 app.use(pino());
+
+
+const originAllowlist = ['https://radickalcreations.com', 'https://www.radickalcreations.com'];
+const corsOptionsDelegate = function (req, callback) {
+    const reqOrigin = req.header('Origin');    
+    const corsOptions = {
+        origin: false,
+    };
+
+    if (originAllowlist.indexOf(reqOrigin) !== -1) {
+        corsOptions.origin = reqOrigin;
+    } 
+
+    callback(null, corsOptions);
+};
+
+app.use(cors(corsOptionsDelegate));
 
 app.get('/', (req, res) => {
     res.send('Hello World! Again.');
