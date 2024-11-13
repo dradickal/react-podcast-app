@@ -25,7 +25,7 @@ function findSeriesID(data, slug) {
 */
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/demo/podcast-web-app',
     element: <App />,
     loader: await getSeriesListData,
     id: "root",
