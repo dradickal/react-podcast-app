@@ -13,6 +13,7 @@
     "api": "pm2 start ./server/api.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "node-html-markdown": "^1.3.0",
