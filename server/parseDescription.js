@@ -17,9 +17,9 @@ async function writeParsedData(filename, data) {
 }
 
 const replacers = [
-    [ /<p><br \/><\/p>/, ''],
-    [ /<br \/><br \/>/, ''],
-    [ /\/n/, ''],
+    [ /<p><br \/><\/p>/, ' '],
+    [ /<br \/><br \/>/, ' '],
+    [ /\/n/, ' '],
 ];
 
 const description = await readDescription('./server/description-test.txt');
