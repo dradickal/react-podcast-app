@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Outlet, useMatches } from 'react-router-dom';
+import { Link, Outlet, useMatches } from 'react-router-dom';
 import { SeriesHeader } from "./SeriesHeader";
+
 
 function PodcastApp() {
     const matches = useMatches();
@@ -11,10 +12,13 @@ function PodcastApp() {
 
     return (
         <>
-            <div className="header">
-                <h1>RKC Cast</h1>
+            <header>
+                <div className="header-title">
+                    <Link to={`${ROOT_PATH}/series`}><img src={`${IMAGE_PATH}/cassette-tape.svg`} alt="cassette tape logo" width="60px"/></Link>
+                    <h1><Link to={`${ROOT_PATH}/series`}>RKC Cast</Link></h1>
+                </div>
                 <SeriesHeader />
-            </div>
+            </header>
             <Outlet />
             <div className="player">
                 <p>Application Player</p>
