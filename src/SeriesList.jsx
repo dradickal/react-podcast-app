@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { useRouteLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import './SeriesList.css';
 
 export default function SeriesList () {
-    const seriesData = useRouteLoaderData("root");
+    const seriesData = useLoaderData();
 
     const images = [];
     seriesData.forEach(series => {
-        images.push(<SeriesLink slug={series.slug} imageURL={series.image} />);
+        images.push(<SeriesLink slug={series.slug} imageURL={series.image} key={series.slug}/>);
     });
     
     useEffect(() => {
@@ -25,7 +25,7 @@ export default function SeriesList () {
 
 function SeriesLink({ slug, imageURL }) {
     return (
-        <Link to={ slug } key={ slug }>
+        <Link to={slug}>
             <img src={imageURL} /> 
         </Link>
     );
