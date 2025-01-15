@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import ReactMarkdown from 'react-markdown';
 import {timeSincePublished} from "./util/dateComparison";
+import './EpisodeCard.css';
 
 const actionButtonIcons = {
     'null': 'far fa-arrow-to-bottom',

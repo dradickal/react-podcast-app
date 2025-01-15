@@ -1,5 +1,10 @@
 .header-series {
-    margin-bottom: 1em;
+    padding: 1em;
+    background-color: cornflowerblue;
+}
+
+.header-series:empty {
+    padding: 0;
 }
   
 .header-series h1 {
