@@ -6,10 +6,11 @@ import {
   Navigate,
 } from 'react-router-dom';
 import { getSeriesListData, getPodcastData } from './util/DataUtility';
-import App from './App.jsx';
+import PodcastApp from './App.jsx';
 import SeriesList from './SeriesList.jsx';
 import './main.css';
 import EpisodeList from './EpisodeList.jsx';
+import Loading from './Loading.jsx';
 
 function findSeriesID(data, slug) {
   const series = data.find((obj) => obj['slug'] === slug);
@@ -23,22 +24,23 @@ function findSeriesID(data, slug) {
  *    - Create Episodes route loader with useRouteLoaderData
  *    - Build out EpisodesList compenent with API data
 */
-const ROOT_PATH = '/demo/podcast-web-app'
 const router = createBrowserRouter([
   {
     path: `${ROOT_PATH}`,
-    element: <App />,
-    loader: await getSeriesListData,
+    element: <PodcastApp />,
     id: "root",
     children: [
       { index: true, element: <Navigate to={`${ROOT_PATH}/series`} replace /> },
       {
         path: `${ROOT_PATH}/series`,
         element: <SeriesList />,
+        hydrateFallbackElement: <Loading />,
+        loader: await getSeriesListData,
       },
       { 
         path: `${ROOT_PATH}/series/:titleSlug`,
         element: <EpisodeList />,
+        hydrateFallbackElement: <Loading />,
         loader: async ({ params }) => {
           const { titleSlug } = params;
           const data = await getSeriesListData();
@@ -48,6 +50,7 @@ const router = createBrowserRouter([
         },
         handle: {
           seriesData: (data) => {
+            data = data || {};
             console.log('seriesData Prop', data);
             return { 
               get: (prop) => Object.hasOwn(data, prop) ? data[prop] : null, 
@@ -57,7 +60,13 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+  ],
+  {
+    future: {
+      v7_partialHydration: true,
+    },
+  }
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
