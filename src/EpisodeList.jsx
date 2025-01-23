@@ -9,7 +9,7 @@ function EpisodeList() {
     
     const EpisodeCards = [];
     episodes.forEach(episode => {
-        EpisodeCards.push(<EpisodeCard episode={episode} key={episode.id} podcastImg={podcastData.image}/>);
+        EpisodeCards.push(<EpisodeCard episode={episode} key={episode.id} podcastImg={podcastData.image} seriesTitle={podcastData.title}/>);
         console.log(episode.brief.length);
     });
 

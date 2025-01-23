@@ -1,33 +1,9 @@
 import { useState } from "react";
 import {timeSincePublished} from "./util/dateComparison";
+import { useEpisode } from "./EpisodeContext";
+import icons from './util/iconsMapper';
 import './EpisodeCard.css';
 
-const actionButtonIcons = {
-    'null': 'far fa-arrow-to-bottom',
-    'inProgress': 'far fa-times',
-    'complete': 'fas fa-play',
-    'current': 'fas fa-play',
-    'nowPlaying': 'fas fa-pause',
-};
-    
-const queueStatusIcons = {
-    'null': '',
-    'inQueue': 'fas fa-list',
-    'current': 'fas fa-play',
-};
-    
-const downloadStatusIcons = {
-    'null': '',
-    'inProgress': '',
-    'complete': 'fas fa-arrow-alt-to-bottom'
-};
-    
-const listeningStatusIcons = {
-    'null': 'fas fa-certificate',
-    'nowPlaying': 'fas fa-volume',
-    'inProgress': 'fas fa-volume-off',
-    'complete': 'far fa-check',
-};
 
 function timecodeFromSec(seconds)
 {
@@ -41,36 +17,36 @@ function timecodeFromSec(seconds)
     return time.map(v => v.toString().padStart(2, '0')).join(':');
 }
 
-export function EpisodeCard({episode, podcastImg}) {
+export function EpisodeCard({episode, podcastImg, seriesTitle}) {
     const [listeningStatus, setListeningStatus] = useState(null);
-    const [downloadStatus, setDownloadStatus] = useState(null);
+    const [downloadStatus, setDownloadStatus] = useState('complete');
     const [queueStatus, setQueueStatus] = useState(null);
+    const [ episodeMeta, setEpisodeMeta ] = useEpisode();
     const useEllipse = episode.brief.length > 485;
 
-    let actionButtonClass = actionButtonIcons[downloadStatus];
-    let queueStatusClass = queueStatusIcons[queueStatus];
-    let downloadStatusClass = downloadStatusIcons[downloadStatus];
-    let listeningStatusClass = listeningStatusIcons[listeningStatus];
+    let actionButtonClass = icons.actionButton[downloadStatus];
+    let queueStatusClass = icons.queueStatus[queueStatus];
+    let downloadStatusClass = icons.downloadStatus[downloadStatus];
+    let listeningStatusClass = icons.listeningStatus[listeningStatus];
+
+    const contextData = {
+        source: episode.audio.source,
+        title: episode.title,
+        series: seriesTitle,
+        image: episode.image || podcastImg,
+    }
 
     if (queueStatus === 'current') {
-        actionButtonClass = actionButtonIcons[queueStatus];
+        actionButtonClass = icons.actionButton[queueStatus];
     }
 
-    const actionClick = () => {
-        switch(downloadStatus) {
-        case null: 
-            setDownloadStatus('inProgress');
-            break;
-        case 'inProgress':
-            setDownloadStatus('complete');
-            break;
-        case 'complete':
-            setDownloadStatus('nowPlaying');
-            break;
-        default:
-            setDownloadStatus(null);
+    const actionClick = (contextData) => {
+        if (episodeMeta && contextData.source === episodeMeta.source) {
+           return;
         }
-    }
+
+        setEpisodeMeta(contextData);
+    };
 
     return (
         <article className="episode-card">
@@ -90,7 +66,7 @@ export function EpisodeCard({episode, podcastImg}) {
                 <p>{episode.brief} {useEllipse ? '\u2026' : ''}</p>
             </div>
             <div className="episode-action">
-                <i className={actionButtonClass + ' episode-action-icon'} onClick={actionClick}></i>
+                <i className={actionButtonClass + ' episode-action-icon'} onClick={() => actionClick(contextData)}></i>
             </div>
             <div className="episode-footer">
                 <span className="episode-footer-statusBar">

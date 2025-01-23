@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet, useMatches } from 'react-router-dom';
 import { SeriesHeader } from "./SeriesHeader";
-
-
+import { AudioPlayer } from "./AudioPlayer";
+import { EpisodeProvider } from "./EpisodeContext";
 function PodcastApp() {
-    const matches = useMatches();
-
-    // useEffect(() => {
-    //     console.log(matches);
-    // }, []);
-
     return (
         <>
             <header>
@@ -19,10 +13,12 @@ function PodcastApp() {
                 </div>
                 <SeriesHeader />
             </header>
-            <Outlet />
-            <div className="player">
-                <p>Application Player</p>
-            </div>
+            <EpisodeProvider>
+                <Outlet />
+                <div className="player">
+                    <AudioPlayer />
+                </div>
+            </EpisodeProvider>
         </>
     )
 }

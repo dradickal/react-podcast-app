@@ -1,8 +1,31 @@
-function AudioPlayer(audio) {
-    const {source, length} = audio;
+import { createRef, useEffect } from 'react';
+import { useEpisode } from './EpisodeContext';
+import AudioPlayerH5 from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
+function handleMediaReady(e, player) {
+    console.log('Media is ready to play');
+    console.log(e);
+    console.log(player);
+    player.current.playAudioPromise();
+}
+
+export function AudioPlayer() {
+    const player = createRef();
+    const [ episodeMeta ] = useEpisode();
+
+
     return (
-        <audio controls controlsList="noFullscreen nodownload" preload="metadata" crossOrigin="anonymous">
-            <source src={source} type="audio/mp3" />
-        </audio>
+        <>
+            <span>{episodeMeta ? `${episodeMeta.series} | ${episodeMeta.title}`: "Select an Episode to Play"}</span>
+            <AudioPlayerH5 
+                src={episodeMeta?.source} 
+                timeFormat='hh:mm:ss' 
+                layout='horizontal'
+                progressJumpSteps={ {forward: 10000, backward: 10000} }
+                onCanPlay={(e) => handleMediaReady(e, player)}
+                ref={player} 
+            />
+        </>
     )
 }
