@@ -41,7 +41,41 @@ h1 > a {
 
 .player {
   position: fixed;
-  background: white;
+  border: solid 4px #777;
   width: 100vw;
   bottom: 0;
+}
+
+.episode-display {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+
+  & img {
+    width: 75px;
+    height: 75px;
+    padding-right: 5px;
+  }
+  & p {
+    margin: 0;
+  }
+}
+
+.episode-meta-title {
+  padding-bottom: 0.2em;
+  font-weight: bold;
+}
+
+.episode-meta-series {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #333
+}
+
+.rhap_additional-controls {
+  flex: 0 0 auto;
+}
+
+.rhap_main-controls {
+  flex: 1 0 auto
 }

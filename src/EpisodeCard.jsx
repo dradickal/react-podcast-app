@@ -29,11 +29,12 @@ export function EpisodeCard({episode, podcastImg, seriesTitle}) {
     let downloadStatusClass = icons.downloadStatus[downloadStatus];
     let listeningStatusClass = icons.listeningStatus[listeningStatus];
 
+    const imageURL = episode.image || podcastImg;
     const contextData = {
         source: episode.audio.source,
         title: episode.title,
         series: seriesTitle,
-        image: episode.image || podcastImg,
+        imageURL: imageURL,
     }
 
     if (queueStatus === 'current') {
@@ -58,9 +59,7 @@ export function EpisodeCard({episode, podcastImg, seriesTitle}) {
                 <i className="episode-menu fas fa-ellipsis-v"></i>
             </div>
             <div className="episode-image">
-                <object data={episode.image} type="img/jpeg" aria-label="Episode Graphic">
-                    <img src={podcastImg} alt="Episode Graphic" />
-                </object>
+                <img src={imageURL} alt="Episode Graphic" />
             </div>
             <div className="episode-description">
                 <p>{episode.brief} {useEllipse ? '\u2026' : ''}</p>
