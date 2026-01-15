@@ -52,7 +52,7 @@ export function EpisodeCard({episode, podcastImg, seriesTitle}) {
     return (
         <article className="episode-card">
             <div className="episode-header-title">
-                <h1>{episode.title}</h1>
+                <h1 title={episode.title}>{episode.title}</h1>
             </div>
             <div className="episode-header-right">
                 <span className="episode-date">{timeSincePublished(episode.published)}</span>
