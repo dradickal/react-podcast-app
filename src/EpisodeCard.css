@@ -85,6 +85,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .episode-brief-clickable {
+    cursor: pointer;
+  }
+
+  .episode-brief-clickable:hover {
+    text-decoration: underline;
+  }
   
   .episode-image img, .episode-image object {
     max-width: 100%;

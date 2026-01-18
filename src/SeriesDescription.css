@@ -21,7 +21,7 @@
 
 .series-description {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-right: 1.2em;
     max-height: 190px;
     transition: max-height .5s ease-out;
