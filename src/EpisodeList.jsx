@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { SeriesDescription } from "./SeriesDescription";
 import { EpisodeCard } from "./EpisodeCard";
+
 
 function EpisodeList() {
     const podcastData = useLoaderData();

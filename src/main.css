@@ -4,7 +4,7 @@
 
 #root {
   display: flow-root;
-  width: 100vw;
+  width: 100%;
   margin-bottom: 5rem;
 }
 
@@ -29,6 +29,7 @@ header {
 
 h1 > a {
   text-decoration: none;
+  color: var(--font-color);
   
   &:visited {
     color: var(--font-color);

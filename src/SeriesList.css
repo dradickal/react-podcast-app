@@ -9,13 +9,20 @@ a > img {
 }
 
 .series-list img {
-    max-width: calc(100vw / 3);
     display: block;
 }
 
+.series-list > a {
+    width: 33.3333%;
+}
+
+.series-list img {
+    width: 100%;
+}
+
 @media screen and (min-width: 900px){
-    .series-list img {
-        width: calc(100vw / 4);
+    .series-list > a {
+        width: 25%;    
     }
 }
 

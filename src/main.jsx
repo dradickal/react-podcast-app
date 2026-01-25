@@ -8,9 +8,10 @@ import {
 import { getSeriesListData, getPodcastData } from './util/DataUtility';
 import PodcastApp from './App.jsx';
 import SeriesList from './SeriesList.jsx';
-import './main.css';
 import EpisodeList from './EpisodeList.jsx';
 import Loading from './Loading.jsx';
+
+import './main.css';
 
 function findSeriesID(data, slug) {
   const series = data.find((obj) => obj['slug'] === slug);
